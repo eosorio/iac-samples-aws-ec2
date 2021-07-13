@@ -3,7 +3,7 @@
 resource "aws_security_group" "public_ssh" {
   name            = "public_ssh"
   description     = "Allow SSH from outside the VPC"
-  vpc_id          = var.vpc_id
+  vpc_id          = data.aws_vpc.my_vpc.id
 
   ingress         {
     description   = "Allow SSH connections from every place"
