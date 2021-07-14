@@ -1,0 +1,3 @@
+awsprofile.tfvars
+.terraform/
+.terraform/*
