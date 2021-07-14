@@ -1,3 +1,4 @@
 terraform/awsprofile.tfvars
 terraform/.terraform/*
 terraform/.terraform
+terraform/backend.tf
