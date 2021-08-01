@@ -17,7 +17,7 @@ public_ssh_sg_arn | ARN of the resulting SG
 Sample usage:
 ```HCL
 module "my_ssh_sg"  {
-  source              = "https://github.com/eosorio/iac-samples-aws-ec2/security_groups"
+  source              = "git::ssh://git@github.com/eosorio/iac-samples-aws-ec2.git//terraform/security_groups?ref=tags/v20210801"
   vpc_id              = "vpc-nnnnn"
   environment         = "dev"
 }
