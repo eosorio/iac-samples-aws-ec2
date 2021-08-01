@@ -4,13 +4,13 @@
 
 ### Inputs
 Variable | Description
-________ | ___________
+-------- | -----------
 environment | Environment tag (for example: prod, staging, dev)
 vpc_id | The ID of the VPC on which the SG will be created
 
 ### Outputs
 Variable | Description
-________ | ___________
+-------- | -----------
 public_ssh_sg_id | ID of the resulting SG
 public_ssh_sg_arn | ARN of the resulting SG
 
