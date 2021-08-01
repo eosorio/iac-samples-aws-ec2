@@ -17,7 +17,7 @@ public_ssh_sg_arn | ARN of the resulting SG
 Sample usage:
 ```HCL
 module "my_ssh_sg"  {
-  source              = "https://github.com/eosorio/iac-samples-aws-ec2/security_groups"
+  source              = "git::ssh://git@github.com/eosorio/iac-samples-aws-ec2.git//terraform/security_groups?ref=tags/v20210801"
   vpc_id              = "vpc-nnnnn"
   environment         = "dev"
 }
@@ -25,8 +25,8 @@ module "my_ssh_sg"  {
 resource "aws_instance" "bastion" {
   ami                         = data.aws_ami.amazon-linux2.id
   instance_type               = "t2.micro" 
-  vpc_security_group_ids      = module.my_ssh_sg.public_ssh_sg_id
-  subnet_id                   = var.subnet_id["public1"]
+  vpc_security_group_ids      = [module.my_ssh_sg.public_ssh_sg_id]
+  subnet_id                   = var.subnet_id["public"]
   key_name                    = var.key_name
 }
 ```
